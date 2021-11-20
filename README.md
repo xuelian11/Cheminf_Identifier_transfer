@@ -1,1 +1,1 @@
-# Cheminf_Identifier_transfer
+# Cheminformatics basic code
