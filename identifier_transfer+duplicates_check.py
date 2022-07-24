@@ -54,9 +54,13 @@ print(comp.canonical_smiles)
 from urllib import request, error, parse
 from time import sleep
 import random
-
-def get_identifier_from_name(name, identifier):
+def get_identifier_from_name(name):
     sleep(random.uniform(0, 0.05))
+    # 'phenylanthranilic acid' should be formatted as 'phenylanthranilic%20acid'
+    s = name.split(' ')
+    if len(s) >1:
+        name = '%20'.join(s)
+        
     url = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/'+name+'/cids/TXT'
     try:
         response = request.urlopen(url)
