@@ -49,6 +49,10 @@ comp = Compound.from_cid(1423)
 print(comp.canonical_smiles)
 # can also get compound inchi, inchikey, molecular weight and formula etc
 
+"""get name from CID"""
+from pubchempy import get_compounds, Compound
+comp = Compound.from_cid(1423)
+print(comp.synonyms[0])
 
 """get CID from name"""
 from urllib import request, error, parse
