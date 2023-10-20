@@ -49,6 +49,11 @@ comp = Compound.from_cid(1423)
 print(comp.canonical_smiles)
 # can also get compound inchi, inchikey, molecular weight and formula etc
 
+"""get smiles, or cid from name"""
+for compound in get_compounds('glucose', 'name'):
+    print (compound.cid)
+    print (compound.isomeric_smiles)
+    
 """get name from CID"""
 from pubchempy import get_compounds, Compound
 comp = Compound.from_cid(1423)
